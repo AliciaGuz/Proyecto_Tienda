@@ -30,7 +30,7 @@ namespace CapaEntidades
         [Required]
         public int VentaId { get; set; }
 
-        // Relación con la clase Ventas mediante la clave externa VentaId.
+        // Relación con la clase Ventas mediante la clave externa VentaId
         [ForeignKey("VentaId")]
         public Ventas Venta { get; set; }
     }
