@@ -27,5 +27,6 @@ namespace CapaEntidades
         public bool Estado { get; set; }
 
 
+
     }
 }
