@@ -52,6 +52,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContextoBD.cs" />
+    <Compile Include="Migrations\202404140401341_Prueba.cs" />
+    <Compile Include="Migrations\202404140401341_Prueba.Designer.cs">
+      <DependentUpon>202404140401341_Prueba.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -64,6 +68,11 @@
       <Project>{8b38d483-0fca-4f8f-b344-dd31a068b8cb}</Project>
       <Name>CapaEntidades</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202404140401341_Prueba.resx">
+      <DependentUpon>202404140401341_Prueba.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
