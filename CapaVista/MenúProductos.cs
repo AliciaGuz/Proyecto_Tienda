@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace CapaVista
 {
-    public partial class Form1 : Form
+    public partial class MenúProductos : Form
     {
-        public Form1()
+        public MenúProductos()
         {
             InitializeComponent();
         }
 
-        private void MenúMantenimientoProducto_Click(object sender, EventArgs e)
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
