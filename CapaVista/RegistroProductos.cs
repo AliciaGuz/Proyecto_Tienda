@@ -32,9 +32,19 @@ namespace CapaVista
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void chkEstado_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
