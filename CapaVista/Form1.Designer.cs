@@ -32,8 +32,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.productoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenúMantenimientoProducto = new System.Windows.Forms.ToolStripMenuItem();
-            this.MenuRegistroVentas = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuRegistroVentas = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +45,8 @@
             this.ventasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1006, 28);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(754, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -56,21 +57,16 @@
             this.MenúMantenimientoProducto});
             this.productoToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
-            this.productoToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
+            this.productoToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.productoToolStripMenuItem.Text = "Productos";
+            this.productoToolStripMenuItem.Click += new System.EventHandler(this.productoToolStripMenuItem_Click);
             // 
             // MenúMantenimientoProducto
             // 
             this.MenúMantenimientoProducto.Name = "MenúMantenimientoProducto";
-            this.MenúMantenimientoProducto.Size = new System.Drawing.Size(260, 26);
+            this.MenúMantenimientoProducto.Size = new System.Drawing.Size(210, 22);
             this.MenúMantenimientoProducto.Text = "Mantenimiento Productos";
             this.MenúMantenimientoProducto.Click += new System.EventHandler(this.MenúMantenimientoProducto_Click);
-            // 
-            // MenuRegistroVentas
-            // 
-            this.MenuRegistroVentas.Name = "MenuRegistroVentas";
-            this.MenuRegistroVentas.Size = new System.Drawing.Size(224, 26);
-            this.MenuRegistroVentas.Text = "Registro de Ventas";
             // 
             // ventasToolStripMenuItem
             // 
@@ -79,20 +75,29 @@
             this.MenuRegistroVentas});
             this.ventasToolStripMenuItem.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.ventasToolStripMenuItem.Text = "Ventas ";
+            this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
+            // 
+            // MenuRegistroVentas
+            // 
+            this.MenuRegistroVentas.Name = "MenuRegistroVentas";
+            this.MenuRegistroVentas.Size = new System.Drawing.Size(180, 22);
+            this.MenuRegistroVentas.Text = "Registro de Ventas";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 673);
+            this.ClientSize = new System.Drawing.Size(754, 547);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tienda | Menu Principal";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

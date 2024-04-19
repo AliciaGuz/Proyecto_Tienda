@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroProductos));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -36,18 +37,20 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnPrecioUnitario = new System.Windows.Forms.TextBox();
+            this.bindingSourceProducto = new System.Windows.Forms.BindingSource(this.components);
             this.btnDecripción = new System.Windows.Forms.TextBox();
             this.btnNombreProducto = new System.Windows.Forms.TextBox();
             this.btnExistencias = new System.Windows.Forms.TextBox();
             this.chkEstado = new System.Windows.Forms.CheckBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceProducto)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(63, 56);
+            this.label1.Location = new System.Drawing.Point(63, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(131, 19);
             this.label1.TabIndex = 0;
@@ -57,7 +60,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(63, 134);
+            this.label2.Location = new System.Drawing.Point(101, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 19);
             this.label2.TabIndex = 1;
@@ -75,7 +78,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(68, 388);
+            this.label4.Location = new System.Drawing.Point(104, 291);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(90, 19);
             this.label4.TabIndex = 3;
@@ -85,7 +88,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(63, 292);
+            this.label5.Location = new System.Drawing.Point(60, 231);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(134, 19);
             this.label5.TabIndex = 4;
@@ -94,7 +97,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(68, 486);
+            this.label7.Location = new System.Drawing.Point(134, 353);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(60, 19);
             this.label7.TabIndex = 6;
@@ -102,14 +105,20 @@
             // 
             // btnPrecioUnitario
             // 
-            this.btnPrecioUnitario.Location = new System.Drawing.Point(279, 292);
+            this.btnPrecioUnitario.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceProducto, "PrecioUnitario", true));
+            this.btnPrecioUnitario.Location = new System.Drawing.Point(213, 231);
             this.btnPrecioUnitario.Name = "btnPrecioUnitario";
             this.btnPrecioUnitario.Size = new System.Drawing.Size(131, 26);
             this.btnPrecioUnitario.TabIndex = 8;
             // 
+            // bindingSourceProducto
+            // 
+            this.bindingSourceProducto.DataSource = typeof(CapaEntidades.Producto);
+            // 
             // btnDecripción
             // 
-            this.btnDecripción.Location = new System.Drawing.Point(279, 109);
+            this.btnDecripción.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceProducto, "Descripcion", true));
+            this.btnDecripción.Location = new System.Drawing.Point(213, 66);
             this.btnDecripción.Multiline = true;
             this.btnDecripción.Name = "btnDecripción";
             this.btnDecripción.Size = new System.Drawing.Size(501, 149);
@@ -117,14 +126,17 @@
             // 
             // btnNombreProducto
             // 
-            this.btnNombreProducto.Location = new System.Drawing.Point(279, 56);
+            this.btnNombreProducto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceProducto, "Nombre", true));
+            this.btnNombreProducto.Location = new System.Drawing.Point(213, 22);
             this.btnNombreProducto.Name = "btnNombreProducto";
             this.btnNombreProducto.Size = new System.Drawing.Size(412, 26);
             this.btnNombreProducto.TabIndex = 10;
+            this.btnNombreProducto.TextChanged += new System.EventHandler(this.btnNombreProducto_TextChanged);
             // 
             // btnExistencias
             // 
-            this.btnExistencias.Location = new System.Drawing.Point(279, 385);
+            this.btnExistencias.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceProducto, "Stock", true));
+            this.btnExistencias.Location = new System.Drawing.Point(213, 291);
             this.btnExistencias.Name = "btnExistencias";
             this.btnExistencias.Size = new System.Drawing.Size(131, 26);
             this.btnExistencias.TabIndex = 12;
@@ -132,7 +144,8 @@
             // chkEstado
             // 
             this.chkEstado.AutoSize = true;
-            this.chkEstado.Location = new System.Drawing.Point(279, 488);
+            this.chkEstado.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.bindingSourceProducto, "Estado", true));
+            this.chkEstado.Location = new System.Drawing.Point(213, 349);
             this.chkEstado.Name = "chkEstado";
             this.chkEstado.Size = new System.Drawing.Size(71, 23);
             this.chkEstado.TabIndex = 13;
@@ -142,7 +155,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(339, 588);
+            this.btnGuardar.Location = new System.Drawing.Point(259, 417);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(85, 38);
             this.btnGuardar.TabIndex = 15;
@@ -152,7 +165,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(564, 588);
+            this.btnCancelar.Location = new System.Drawing.Point(461, 417);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(85, 38);
             this.btnCancelar.TabIndex = 16;
@@ -164,7 +177,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(869, 636);
+            this.ClientSize = new System.Drawing.Size(756, 473);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.chkEstado);
@@ -184,6 +197,7 @@
             this.Name = "RegistroProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tienda | Registro de Productos";
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceProducto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,5 +218,6 @@
         private System.Windows.Forms.CheckBox chkEstado;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.BindingSource bindingSourceProducto;
     }
 }

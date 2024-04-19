@@ -84,6 +84,7 @@
     <EmbeddedResource Include="RegistroProductos.resx">
       <DependentUpon>RegistroProductos.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Properties\DataSources\CapaEntidades.Producto.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -96,6 +97,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaEntidades\CapaEntidades.csproj">
+      <Project>{8b38d483-0fca-4f8f-b344-dd31a068b8cb}</Project>
+      <Name>CapaEntidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaLogica\CapaLogica.csproj">
+      <Project>{D538649D-1F9F-415D-A792-237AF176F4AE}</Project>
+      <Name>CapaLogica</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
