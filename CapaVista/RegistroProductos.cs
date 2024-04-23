@@ -20,6 +20,10 @@ namespace CapaVista
         public RegistroProductos()
         {
             InitializeComponent();
+
+            bindingSourceProducto.MoveLast();
+            bindingSourceProducto.AddNew();
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -122,6 +126,11 @@ namespace CapaVista
         }
 
         private void btnNombreProducto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RegistroProductos_Load(object sender, EventArgs e)
         {
 
         }
