@@ -8,14 +8,19 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaLogica;
 
 namespace CapaVista
 {
     public partial class MenúProductos : Form
     {
+        ProductoLOG _ProductoLOG;
         public MenúProductos()
         {
             InitializeComponent();
+            _ProductoLOG = new ProductoLOG();
+
+            dgvProductos.DataSource = _ProductoLOG.ObtenerProductos();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -33,6 +38,11 @@ namespace CapaVista
         {
             RegistroProductos objRegistroProducto = new RegistroProductos();
             objRegistroProducto.ShowDialog();
+
+        }
+
+        private void MenúProductos_Load(object sender, EventArgs e)
+        {
 
         }
     }

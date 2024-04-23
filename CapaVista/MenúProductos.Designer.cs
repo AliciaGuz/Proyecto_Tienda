@@ -48,16 +48,16 @@
             // dgvProductos
             // 
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Location = new System.Drawing.Point(38, 97);
+            this.dgvProductos.Location = new System.Drawing.Point(31, 59);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.RowHeadersWidth = 51;
             this.dgvProductos.RowTemplate.Height = 24;
-            this.dgvProductos.Size = new System.Drawing.Size(932, 430);
+            this.dgvProductos.Size = new System.Drawing.Size(848, 327);
             this.dgvProductos.TabIndex = 2;
             // 
             // btnNuevoProducto
             // 
-            this.btnNuevoProducto.Location = new System.Drawing.Point(38, 549);
+            this.btnNuevoProducto.Location = new System.Drawing.Point(31, 429);
             this.btnNuevoProducto.Name = "btnNuevoProducto";
             this.btnNuevoProducto.Size = new System.Drawing.Size(108, 31);
             this.btnNuevoProducto.TabIndex = 3;
@@ -67,7 +67,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(862, 549);
+            this.btnCancelar.Location = new System.Drawing.Point(771, 429);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(108, 31);
             this.btnCancelar.TabIndex = 4;
@@ -79,7 +79,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1006, 673);
+            this.ClientSize = new System.Drawing.Size(1004, 491);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnNuevoProducto);
             this.Controls.Add(this.dgvProductos);
@@ -90,6 +90,7 @@
             this.Name = "MenúProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tienda | Mantenimiento Productos";
+            this.Load += new System.EventHandler(this.MenúProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.ResumeLayout(false);
 

@@ -110,6 +110,7 @@ namespace CapaVista
                 {
                     MessageBox.Show("Usuario agregado exitosamente!", "Tienda | Registro Productos",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                 }
                 else
                 {
