@@ -28,12 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenúProductos));
             this.groupBoxFiltro = new System.Windows.Forms.GroupBox();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.btnNuevoProducto = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxFiltro
@@ -47,17 +56,27 @@
             // 
             // dgvProductos
             // 
+            this.dgvProductos.AllowUserToAddRows = false;
+            this.dgvProductos.AllowUserToDeleteRows = false;
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Location = new System.Drawing.Point(31, 59);
+            this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdProducto,
+            this.Nombre,
+            this.Descripcion,
+            this.PrecioUnitario,
+            this.Stock,
+            this.Estado});
+            this.dgvProductos.Location = new System.Drawing.Point(72, 97);
             this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.ReadOnly = true;
             this.dgvProductos.RowHeadersWidth = 51;
             this.dgvProductos.RowTemplate.Height = 24;
-            this.dgvProductos.Size = new System.Drawing.Size(848, 327);
+            this.dgvProductos.Size = new System.Drawing.Size(877, 327);
             this.dgvProductos.TabIndex = 2;
             // 
             // btnNuevoProducto
             // 
-            this.btnNuevoProducto.Location = new System.Drawing.Point(31, 429);
+            this.btnNuevoProducto.Location = new System.Drawing.Point(72, 448);
             this.btnNuevoProducto.Name = "btnNuevoProducto";
             this.btnNuevoProducto.Size = new System.Drawing.Size(108, 31);
             this.btnNuevoProducto.TabIndex = 3;
@@ -67,7 +86,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(771, 429);
+            this.btnCancelar.Location = new System.Drawing.Point(812, 448);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(108, 31);
             this.btnCancelar.TabIndex = 4;
@@ -75,11 +94,70 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // productoBindingSource
+            // 
+            this.productoBindingSource.DataSource = typeof(CapaEntidades.Producto);
+            // 
+            // IdProducto
+            // 
+            this.IdProducto.DataPropertyName = "IdProducto";
+            this.IdProducto.HeaderText = "ID";
+            this.IdProducto.MinimumWidth = 6;
+            this.IdProducto.Name = "IdProducto";
+            this.IdProducto.ReadOnly = true;
+            this.IdProducto.Width = 60;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre Producto";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 170;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "Descripcion";
+            this.Descripcion.HeaderText = "Descripción ";
+            this.Descripcion.MinimumWidth = 6;
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 250;
+            // 
+            // PrecioUnitario
+            // 
+            this.PrecioUnitario.DataPropertyName = "PrecioUnitario";
+            this.PrecioUnitario.HeaderText = "Precio Unitario";
+            this.PrecioUnitario.MinimumWidth = 6;
+            this.PrecioUnitario.Name = "PrecioUnitario";
+            this.PrecioUnitario.ReadOnly = true;
+            this.PrecioUnitario.Width = 125;
+            // 
+            // Stock
+            // 
+            this.Stock.DataPropertyName = "Stock";
+            this.Stock.HeaderText = "Existencias";
+            this.Stock.MinimumWidth = 6;
+            this.Stock.Name = "Stock";
+            this.Stock.ReadOnly = true;
+            this.Stock.Width = 110;
+            // 
+            // Estado
+            // 
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.MinimumWidth = 6;
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Visible = false;
+            this.Estado.Width = 125;
+            // 
             // MenúProductos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1004, 491);
+            this.ClientSize = new System.Drawing.Size(1004, 506);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnNuevoProducto);
             this.Controls.Add(this.dgvProductos);
@@ -92,6 +170,7 @@
             this.Text = "Tienda | Mantenimiento Productos";
             this.Load += new System.EventHandler(this.MenúProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -102,5 +181,12 @@
         private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.Button btnNuevoProducto;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.BindingSource productoBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioUnitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }
 }
