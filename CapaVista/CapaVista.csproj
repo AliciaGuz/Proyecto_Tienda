@@ -76,6 +76,12 @@
     <Compile Include="RegistroProductos.Designer.cs">
       <DependentUpon>RegistroProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegistroVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroVenta.Designer.cs">
+      <DependentUpon>RegistroVenta.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -94,8 +100,13 @@
     <EmbeddedResource Include="RegistroProductos.resx">
       <DependentUpon>RegistroProductos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RegistroVenta.resx">
+      <DependentUpon>RegistroVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\CapaEntidades.DetalleVenta.datasource" />
     <None Include="Properties\DataSources\CapaEntidades.Producto.datasource" />
+    <None Include="Properties\DataSources\CapaEntidades.Ventas.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -66,32 +66,36 @@
             this.PrecioUnitario,
             this.Stock,
             this.Estado});
-            this.dgvProductos.Location = new System.Drawing.Point(72, 97);
+            this.dgvProductos.Location = new System.Drawing.Point(12, 83);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
             this.dgvProductos.RowHeadersWidth = 51;
             this.dgvProductos.RowTemplate.Height = 24;
-            this.dgvProductos.Size = new System.Drawing.Size(877, 327);
+            this.dgvProductos.Size = new System.Drawing.Size(680, 327);
             this.dgvProductos.TabIndex = 2;
             // 
             // btnNuevoProducto
             // 
-            this.btnNuevoProducto.Location = new System.Drawing.Point(72, 448);
+            this.btnNuevoProducto.BackColor = System.Drawing.Color.Green;
+            this.btnNuevoProducto.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnNuevoProducto.Location = new System.Drawing.Point(66, 433);
             this.btnNuevoProducto.Name = "btnNuevoProducto";
             this.btnNuevoProducto.Size = new System.Drawing.Size(108, 31);
             this.btnNuevoProducto.TabIndex = 3;
             this.btnNuevoProducto.Text = "Agregar\r\n";
-            this.btnNuevoProducto.UseVisualStyleBackColor = true;
+            this.btnNuevoProducto.UseVisualStyleBackColor = false;
             this.btnNuevoProducto.Click += new System.EventHandler(this.btnNuevoProducto_Click);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(812, 448);
+            this.btnCancelar.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCancelar.Location = new System.Drawing.Point(495, 433);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(108, 31);
             this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar\r\n";
-            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // productoBindingSource
@@ -114,7 +118,7 @@
             this.Nombre.MinimumWidth = 6;
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 170;
+            this.Nombre.Width = 250;
             // 
             // Descripcion
             // 
@@ -123,6 +127,7 @@
             this.Descripcion.MinimumWidth = 6;
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.ReadOnly = true;
+            this.Descripcion.Visible = false;
             this.Descripcion.Width = 250;
             // 
             // PrecioUnitario
@@ -155,9 +160,9 @@
             // 
             // MenúProductos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1004, 506);
+            this.ClientSize = new System.Drawing.Size(712, 500);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnNuevoProducto);
             this.Controls.Add(this.dgvProductos);

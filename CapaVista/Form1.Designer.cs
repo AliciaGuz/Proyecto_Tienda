@@ -84,6 +84,7 @@
             this.MenuRegistroVentas.Name = "MenuRegistroVentas";
             this.MenuRegistroVentas.Size = new System.Drawing.Size(180, 22);
             this.MenuRegistroVentas.Text = "Registro de Ventas";
+            this.MenuRegistroVentas.Click += new System.EventHandler(this.MenuRegistroVentas_Click);
             // 
             // Form1
             // 
