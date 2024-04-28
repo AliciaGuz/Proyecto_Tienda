@@ -36,23 +36,30 @@ namespace CapaVista
             productobindingSource.DataSource = _productoLOG.ObtenerProductos();
         }
 
-        private void RegistroVenta_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnCodigo_TextChanged(object sender, EventArgs e)
         {
+            if (!string.IsNullOrEmpty(btnCodigo.Text))
+            {
+                _productoLOG= new ProductoLOG();
+                int codigo = int.Parse(btnCodigo.Text);
+                var producto = _productoLOG.ObtenerProductoPorId(codigo);
+
+                if (producto != null && producto.Estado == true)
+                {
+                    btnNombre.Text = producto.Nombre;
+                }
+                else
+                {
+                    btnNombre.Text = "";
+                }
+
+
+            }
+            else
+            {
+                CargarProductos();
+            }
+
 
         }
     }

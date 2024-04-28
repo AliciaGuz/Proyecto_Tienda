@@ -61,7 +61,7 @@
             this.label1.Location = new System.Drawing.Point(29, 21);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(127, 23);
+            this.label1.Size = new System.Drawing.Size(163, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "Código Producto";
             // 
@@ -72,7 +72,7 @@
             this.label2.Location = new System.Drawing.Point(364, 24);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 23);
+            this.label2.Size = new System.Drawing.Size(175, 28);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nombre Producto";
             // 
@@ -81,7 +81,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(82, 77);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 23);
+            this.label3.Size = new System.Drawing.Size(92, 28);
             this.label3.TabIndex = 2;
             this.label3.Text = "Cantidad";
             // 
@@ -90,7 +90,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(409, 76);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 23);
+            this.label4.Size = new System.Drawing.Size(117, 28);
             this.label4.TabIndex = 3;
             this.label4.Text = "Existencias";
             // 
@@ -104,18 +104,17 @@
             this.btnStock.Location = new System.Drawing.Point(523, 73);
             this.btnStock.Name = "btnStock";
             this.btnStock.ReadOnly = true;
-            this.btnStock.Size = new System.Drawing.Size(100, 30);
+            this.btnStock.Size = new System.Drawing.Size(100, 35);
             this.btnStock.TabIndex = 7;
             // 
             // btnAgregar
             // 
             this.btnAgregar.Location = new System.Drawing.Point(681, 80);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(81, 32);
+            this.btnAgregar.Size = new System.Drawing.Size(107, 38);
             this.btnAgregar.TabIndex = 8;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.button1_Click);
             // 
             // dgvDetalleVenta
             // 
@@ -129,6 +128,7 @@
             this.SubTotal});
             this.dgvDetalleVenta.Location = new System.Drawing.Point(33, 136);
             this.dgvDetalleVenta.Name = "dgvDetalleVenta";
+            this.dgvDetalleVenta.RowHeadersWidth = 51;
             this.dgvDetalleVenta.Size = new System.Drawing.Size(729, 177);
             this.dgvDetalleVenta.TabIndex = 9;
             // 
@@ -136,6 +136,7 @@
             // 
             this.Código.DataPropertyName = "Codigo";
             this.Código.HeaderText = "Código";
+            this.Código.MinimumWidth = 6;
             this.Código.Name = "Código";
             this.Código.ReadOnly = true;
             this.Código.Width = 75;
@@ -144,6 +145,7 @@
             // 
             this.Nombre.DataPropertyName = "Nombre";
             this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
             this.Nombre.Width = 250;
@@ -152,19 +154,24 @@
             // 
             this.Precio.DataPropertyName = "Precio";
             this.Precio.HeaderText = "Precio";
+            this.Precio.MinimumWidth = 6;
             this.Precio.Name = "Precio";
+            this.Precio.Width = 125;
             // 
             // Cantidad
             // 
             this.Cantidad.DataPropertyName = "Cantidad";
             this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 6;
             this.Cantidad.Name = "Cantidad";
             this.Cantidad.ReadOnly = true;
+            this.Cantidad.Width = 125;
             // 
             // SubTotal
             // 
             this.SubTotal.DataPropertyName = "SubTotal";
             this.SubTotal.HeaderText = "Sub Total";
+            this.SubTotal.MinimumWidth = 6;
             this.SubTotal.Name = "SubTotal";
             this.SubTotal.ReadOnly = true;
             this.SubTotal.Width = 150;
@@ -174,7 +181,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(601, 335);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 23);
+            this.label5.Size = new System.Drawing.Size(66, 28);
             this.label5.TabIndex = 10;
             this.label5.Text = "Total:";
             // 
@@ -183,7 +190,7 @@
             this.btnTotal.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ventabindingSource, "Total", true));
             this.btnTotal.Location = new System.Drawing.Point(661, 335);
             this.btnTotal.Name = "btnTotal";
-            this.btnTotal.Size = new System.Drawing.Size(100, 30);
+            this.btnTotal.Size = new System.Drawing.Size(100, 35);
             this.btnTotal.TabIndex = 11;
             // 
             // ventabindingSource
@@ -207,18 +214,19 @@
             this.btnCancelar.TabIndex = 13;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnNombre
             // 
+            this.btnNombre.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.btnNombre.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.btnNombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productobindingSource, "Nombre", true));
             this.btnNombre.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.productobindingSource, "IdProducto", true));
             this.btnNombre.DataSource = this.productobindingSource;
             this.btnNombre.DisplayMember = "Nombre";
             this.btnNombre.FormattingEnabled = true;
-            this.btnNombre.Location = new System.Drawing.Point(508, 21);
+            this.btnNombre.Location = new System.Drawing.Point(539, 18);
             this.btnNombre.Name = "btnNombre";
-            this.btnNombre.Size = new System.Drawing.Size(247, 31);
+            this.btnNombre.Size = new System.Drawing.Size(247, 36);
             this.btnNombre.TabIndex = 14;
             this.btnNombre.ValueMember = "IdProducto";
             // 
@@ -226,20 +234,21 @@
             // 
             this.btnCantidad.Location = new System.Drawing.Point(187, 76);
             this.btnCantidad.Name = "btnCantidad";
-            this.btnCantidad.Size = new System.Drawing.Size(100, 30);
+            this.btnCantidad.Size = new System.Drawing.Size(100, 35);
             this.btnCantidad.TabIndex = 6;
             // 
             // btnCodigo
             // 
             this.btnCodigo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productobindingSource, "IdProducto", true));
-            this.btnCodigo.Location = new System.Drawing.Point(187, 23);
+            this.btnCodigo.Location = new System.Drawing.Point(199, 21);
             this.btnCodigo.Name = "btnCodigo";
-            this.btnCodigo.Size = new System.Drawing.Size(100, 30);
+            this.btnCodigo.Size = new System.Drawing.Size(100, 35);
             this.btnCodigo.TabIndex = 15;
+            this.btnCodigo.TextChanged += new System.EventHandler(this.btnCodigo_TextChanged);
             // 
             // RegistroVenta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnCodigo);
@@ -259,8 +268,8 @@
             this.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "RegistroVenta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tienda | Registro Venta";
-            this.Load += new System.EventHandler(this.RegistroVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productobindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVenta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ventabindingSource)).EndInit();
