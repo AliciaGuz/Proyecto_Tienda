@@ -61,7 +61,7 @@
             this.label1.Location = new System.Drawing.Point(29, 21);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(163, 28);
+            this.label1.Size = new System.Drawing.Size(194, 33);
             this.label1.TabIndex = 0;
             this.label1.Text = "Código Producto";
             // 
@@ -72,7 +72,7 @@
             this.label2.Location = new System.Drawing.Point(364, 24);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(175, 28);
+            this.label2.Size = new System.Drawing.Size(208, 33);
             this.label2.TabIndex = 1;
             this.label2.Text = "Nombre Producto";
             // 
@@ -81,7 +81,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(82, 77);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(92, 28);
+            this.label3.Size = new System.Drawing.Size(111, 33);
             this.label3.TabIndex = 2;
             this.label3.Text = "Cantidad";
             // 
@@ -90,7 +90,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(409, 76);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(117, 28);
+            this.label4.Size = new System.Drawing.Size(142, 33);
             this.label4.TabIndex = 3;
             this.label4.Text = "Existencias";
             // 
@@ -104,7 +104,7 @@
             this.btnStock.Location = new System.Drawing.Point(523, 73);
             this.btnStock.Name = "btnStock";
             this.btnStock.ReadOnly = true;
-            this.btnStock.Size = new System.Drawing.Size(100, 35);
+            this.btnStock.Size = new System.Drawing.Size(100, 41);
             this.btnStock.TabIndex = 7;
             // 
             // btnAgregar
@@ -115,6 +115,7 @@
             this.btnAgregar.TabIndex = 8;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // dgvDetalleVenta
             // 
@@ -181,7 +182,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(601, 335);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 28);
+            this.label5.Size = new System.Drawing.Size(80, 33);
             this.label5.TabIndex = 10;
             this.label5.Text = "Total:";
             // 
@@ -190,7 +191,7 @@
             this.btnTotal.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ventabindingSource, "Total", true));
             this.btnTotal.Location = new System.Drawing.Point(661, 335);
             this.btnTotal.Name = "btnTotal";
-            this.btnTotal.Size = new System.Drawing.Size(100, 35);
+            this.btnTotal.Size = new System.Drawing.Size(100, 41);
             this.btnTotal.TabIndex = 11;
             // 
             // ventabindingSource
@@ -226,7 +227,7 @@
             this.btnNombre.FormattingEnabled = true;
             this.btnNombre.Location = new System.Drawing.Point(539, 18);
             this.btnNombre.Name = "btnNombre";
-            this.btnNombre.Size = new System.Drawing.Size(247, 36);
+            this.btnNombre.Size = new System.Drawing.Size(247, 41);
             this.btnNombre.TabIndex = 14;
             this.btnNombre.ValueMember = "IdProducto";
             // 
@@ -234,7 +235,7 @@
             // 
             this.btnCantidad.Location = new System.Drawing.Point(187, 76);
             this.btnCantidad.Name = "btnCantidad";
-            this.btnCantidad.Size = new System.Drawing.Size(100, 35);
+            this.btnCantidad.Size = new System.Drawing.Size(100, 41);
             this.btnCantidad.TabIndex = 6;
             // 
             // btnCodigo
@@ -242,13 +243,13 @@
             this.btnCodigo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productobindingSource, "IdProducto", true));
             this.btnCodigo.Location = new System.Drawing.Point(199, 21);
             this.btnCodigo.Name = "btnCodigo";
-            this.btnCodigo.Size = new System.Drawing.Size(100, 35);
+            this.btnCodigo.Size = new System.Drawing.Size(100, 41);
             this.btnCodigo.TabIndex = 15;
             this.btnCodigo.TextChanged += new System.EventHandler(this.btnCodigo_TextChanged);
             // 
             // RegistroVenta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 33F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnCodigo);
