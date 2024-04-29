@@ -90,10 +90,10 @@ namespace CapaVista
                         montoTotal += (decimal)row.Cells["SubTotal"].Value;
                     }
 
-                    foreach (DataRow row in dgvDetalleVenta.Rows)
-                    {
-                        montoTotal += (int)row["SubTotal"];
-                    }
+                    //foreach (DataRow row in dgvDetalleVenta.Rows)
+                    //{
+                    //    montoTotal += (int)row["SubTotal"];
+                    //}
 
                     btnTotal.Text = montoTotal.ToString();
 
