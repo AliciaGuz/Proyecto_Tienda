@@ -27,7 +27,7 @@ namespace CapaVista
             detalleVenta = new DataTable();
             detalleVenta.Columns.Add("Codigo", typeof(int));
             detalleVenta.Columns.Add("Nombre", typeof(string));
-            detalleVenta.Columns.Add("Precio", typeof(decimal));
+            detalleVenta.Columns.Add("PrecioUnitario", typeof(decimal));
             detalleVenta.Columns.Add("Cantidad", typeof(int));
             detalleVenta.Columns.Add("Subtotal", typeof(decimal));
         }
@@ -83,20 +83,7 @@ namespace CapaVista
 
                     dgvDetalleVenta.DataSource = detalleVenta;
 
-                    decimal montoTotal = 0;
-
-                    foreach (DataGridViewRow row in dgvDetalleVenta.Rows)
-                    {
-                        montoTotal += (decimal)row.Cells["SubTotal"].Value;
-                    }
-
-                    //foreach (DataRow row in dgvDetalleVenta.Rows)
-                    //{
-                    //    montoTotal += (int)row["SubTotal"];
-                    //}
-
-                    btnTotal.Text = montoTotal.ToString();
-
+                    CalcularMontoTotal();
                 }
             }
             catch (Exception)
@@ -105,6 +92,29 @@ namespace CapaVista
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void CalcularMontoTotal()
+        {
+            decimal montoTotal = 0;
+
+            foreach (DataGridViewRow row in dgvDetalleVenta.Rows)
+            {
+                montoTotal += decimal.Parse(row.Cells["SubTotal"].Value.ToString());
+            }
+
+            //foreach (DataRow row in detalleVenta.Rows)
+            //{
+            //    montoTotal += (int)row["SubTotal"];
+            //}
+
+            btnTotal.Text = montoTotal.ToString();
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+  
 
 
     }
