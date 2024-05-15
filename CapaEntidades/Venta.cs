@@ -28,6 +28,10 @@ namespace CapaEntidades
         // Un objeto Venta puede tener una lista de objetos DetalleVenta asociados.
         public List<DetalleVenta> Detalles { get; set; }
 
-
+        public Ventas() 
+        {
+            Detalles = new List<DetalleVenta>();
+        
+        }
     }
 }

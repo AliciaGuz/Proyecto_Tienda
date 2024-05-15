@@ -27,9 +27,9 @@ namespace CapaVista
             detalleVenta = new DataTable();
             detalleVenta.Columns.Add("Codigo", typeof(int));
             detalleVenta.Columns.Add("Nombre", typeof(string));
-            detalleVenta.Columns.Add("PrecioUnitario", typeof(decimal));
+            detalleVenta.Columns.Add("Precio", typeof(decimal));
             detalleVenta.Columns.Add("Cantidad", typeof(int));
-            detalleVenta.Columns.Add("Subtotal", typeof(decimal));
+            detalleVenta.Columns.Add("SubTotal", typeof(decimal));
         }
 
         private void CargarProductos()
@@ -114,9 +114,101 @@ namespace CapaVista
         {
             this.Close();
         }
-  
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            {
+
+                try
+                {
+                    VentaLOG _ventaLOG = new VentaLOG();
+
+                    Ventas ventas = new Ventas();
+                    ventas.Fecha = DateTime.Now;
+                    ventas.Total = decimal.Parse(btnTotal.Text);
+
+                    foreach (DataGridViewRow row in dgvDetalleVenta.Rows)
+                    {
+                        int codigo;
+                        decimal precio;
+                        int cantidad;
+
+                        // Verificar si los valores de las celdas son válidos antes de convertirlos
+                        if (int.TryParse(row.Cells["Codigo"].Value?.ToString(), out codigo) &&
+                            decimal.TryParse(row.Cells["Precio"].Value?.ToString(), out precio) &&
+                            int.TryParse(row.Cells["Cantidad"].Value?.ToString(), out cantidad))
+                        {
+                            var detalle = new DetalleVenta()
+                            {
+                                ProductoId = codigo,
+                                Precio = precio,
+                                Cantidad = cantidad
+                            };
+
+                            ventas.Detalles.Add(detalle);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Los datos en la fila " + row.Index + " no son válidos.", "Error de Conversión",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+
+                    int resultado = _ventaLOG.GuardarVenta(ventas);
+
+                    if (resultado > 0)
+                    {
+                        MessageBox.Show("Venta Guardada con Éxito");
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se logró guardar la venta");
+                    }
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Ocurrio un Error", "UNAB|Chalatenango",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void RegistroVenta_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvDetalleVenta_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.ColumnIndex >= 0 && e.RowIndex >= 0)
+                {
+                    bool precioValido = decimal.TryParse(dgvDetalleVenta.Rows[e.RowIndex].Cells["Precio"].Value.ToString(), out decimal Precio);
+                    int cantidad = int.Parse(dgvDetalleVenta.Rows[e.RowIndex].Cells["Cantidad"].Value.ToString());
+
+                    if (precioValido && cantidad > 0)
+                    {
+                        decimal SubTotal = Precio * cantidad;
+                        dgvDetalleVenta.Rows[e.RowIndex].Cells["SubTotal"].Value = SubTotal;
+
+                        CalcularMontoTotal();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Debe ingresar un precio valido");
+                    }
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ocurrio un error.");
+            }
+        }
 
 
+
+       
     }
 }
 

@@ -32,15 +32,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenúProductos));
             this.groupBoxFiltro = new System.Windows.Forms.GroupBox();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.btnNuevoProducto = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnNuevoProducto = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -71,36 +71,8 @@
             this.dgvProductos.ReadOnly = true;
             this.dgvProductos.RowHeadersWidth = 51;
             this.dgvProductos.RowTemplate.Height = 24;
-            this.dgvProductos.Size = new System.Drawing.Size(680, 327);
+            this.dgvProductos.Size = new System.Drawing.Size(680, 294);
             this.dgvProductos.TabIndex = 2;
-            // 
-            // btnNuevoProducto
-            // 
-            this.btnNuevoProducto.BackColor = System.Drawing.Color.Green;
-            this.btnNuevoProducto.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnNuevoProducto.Location = new System.Drawing.Point(66, 433);
-            this.btnNuevoProducto.Name = "btnNuevoProducto";
-            this.btnNuevoProducto.Size = new System.Drawing.Size(108, 31);
-            this.btnNuevoProducto.TabIndex = 3;
-            this.btnNuevoProducto.Text = "Agregar\r\n";
-            this.btnNuevoProducto.UseVisualStyleBackColor = false;
-            this.btnNuevoProducto.Click += new System.EventHandler(this.btnNuevoProducto_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCancelar.Location = new System.Drawing.Point(495, 433);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(108, 31);
-            this.btnCancelar.TabIndex = 4;
-            this.btnCancelar.Text = "Cancelar\r\n";
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // productoBindingSource
-            // 
-            this.productoBindingSource.DataSource = typeof(CapaEntidades.Producto);
             // 
             // IdProducto
             // 
@@ -158,11 +130,39 @@
             this.Estado.Visible = false;
             this.Estado.Width = 125;
             // 
+            // btnNuevoProducto
+            // 
+            this.btnNuevoProducto.BackColor = System.Drawing.Color.Green;
+            this.btnNuevoProducto.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnNuevoProducto.Location = new System.Drawing.Point(70, 392);
+            this.btnNuevoProducto.Name = "btnNuevoProducto";
+            this.btnNuevoProducto.Size = new System.Drawing.Size(108, 31);
+            this.btnNuevoProducto.TabIndex = 3;
+            this.btnNuevoProducto.Text = "Agregar\r\n";
+            this.btnNuevoProducto.UseVisualStyleBackColor = false;
+            this.btnNuevoProducto.Click += new System.EventHandler(this.btnNuevoProducto_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCancelar.Location = new System.Drawing.Point(499, 392);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(108, 31);
+            this.btnCancelar.TabIndex = 4;
+            this.btnCancelar.Text = "Cancelar\r\n";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // productoBindingSource
+            // 
+            this.productoBindingSource.DataSource = typeof(CapaEntidades.Producto);
+            // 
             // MenúProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(712, 500);
+            this.ClientSize = new System.Drawing.Size(712, 432);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnNuevoProducto);
             this.Controls.Add(this.dgvProductos);

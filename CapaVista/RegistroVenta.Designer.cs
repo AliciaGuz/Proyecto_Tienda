@@ -37,23 +37,21 @@
             this.btnStock = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dgvDetalleVenta = new System.Windows.Forms.DataGridView();
-            this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.btnTotal = new System.Windows.Forms.TextBox();
-            this.ventabindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnNombre = new System.Windows.Forms.ComboBox();
             this.btnCantidad = new System.Windows.Forms.TextBox();
             this.btnCodigo = new System.Windows.Forms.TextBox();
             this.detallesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.productobindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVenta)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ventabindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detallesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,7 +124,7 @@
             this.dgvDetalleVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Código,
             this.Nombre,
-            this.PrecioUnitario,
+            this.Precio,
             this.Cantidad,
             this.SubTotal});
             this.dgvDetalleVenta.Location = new System.Drawing.Point(33, 136);
@@ -134,52 +132,7 @@
             this.dgvDetalleVenta.RowHeadersWidth = 51;
             this.dgvDetalleVenta.Size = new System.Drawing.Size(729, 177);
             this.dgvDetalleVenta.TabIndex = 9;
-            // 
-            // Código
-            // 
-            this.Código.DataPropertyName = "Codigo";
-            this.Código.Frozen = true;
-            this.Código.HeaderText = "Código";
-            this.Código.MinimumWidth = 6;
-            this.Código.Name = "Código";
-            this.Código.ReadOnly = true;
-            this.Código.Width = 75;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.Frozen = true;
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 250;
-            // 
-            // PrecioUnitario
-            // 
-            this.PrecioUnitario.DataPropertyName = "PrecioUnitario";
-            this.PrecioUnitario.HeaderText = "Precio";
-            this.PrecioUnitario.MinimumWidth = 6;
-            this.PrecioUnitario.Name = "PrecioUnitario";
-            this.PrecioUnitario.Width = 125;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.DataPropertyName = "Cantidad";
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MinimumWidth = 6;
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            this.Cantidad.Width = 125;
-            // 
-            // SubTotal
-            // 
-            this.SubTotal.DataPropertyName = "SubTotal";
-            this.SubTotal.HeaderText = "Sub Total";
-            this.SubTotal.MinimumWidth = 6;
-            this.SubTotal.Name = "SubTotal";
-            this.SubTotal.ReadOnly = true;
-            this.SubTotal.Width = 150;
+            this.dgvDetalleVenta.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalleVenta_CellValueChanged);
             // 
             // label5
             // 
@@ -192,15 +145,10 @@
             // 
             // btnTotal
             // 
-            this.btnTotal.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ventabindingSource, "Total", true));
             this.btnTotal.Location = new System.Drawing.Point(661, 335);
             this.btnTotal.Name = "btnTotal";
             this.btnTotal.Size = new System.Drawing.Size(100, 30);
             this.btnTotal.TabIndex = 11;
-            // 
-            // ventabindingSource
-            // 
-            this.ventabindingSource.DataSource = typeof(CapaEntidades.Ventas);
             // 
             // btnAceptar
             // 
@@ -210,6 +158,7 @@
             this.btnAceptar.TabIndex = 12;
             this.btnAceptar.Text = "Aceptar ";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -250,10 +199,51 @@
             this.btnCodigo.TabIndex = 15;
             this.btnCodigo.TextChanged += new System.EventHandler(this.btnCodigo_TextChanged);
             // 
-            // detallesBindingSource
+            // Código
             // 
-            this.detallesBindingSource.DataMember = "Detalles";
-            this.detallesBindingSource.DataSource = this.ventabindingSource;
+            this.Código.DataPropertyName = "Codigo";
+            this.Código.Frozen = true;
+            this.Código.HeaderText = "Código";
+            this.Código.MinimumWidth = 6;
+            this.Código.Name = "Código";
+            this.Código.ReadOnly = true;
+            this.Código.Width = 75;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.Frozen = true;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 250;
+            // 
+            // Precio
+            // 
+            this.Precio.DataPropertyName = "Precio";
+            this.Precio.HeaderText = "Precio";
+            this.Precio.MinimumWidth = 6;
+            this.Precio.Name = "Precio";
+            this.Precio.Width = 125;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.DataPropertyName = "Cantidad";
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 6;
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            this.Cantidad.Width = 125;
+            // 
+            // SubTotal
+            // 
+            this.SubTotal.DataPropertyName = "SubTotal";
+            this.SubTotal.HeaderText = "Sub Total";
+            this.SubTotal.MinimumWidth = 6;
+            this.SubTotal.Name = "SubTotal";
+            this.SubTotal.ReadOnly = true;
+            this.SubTotal.Width = 150;
             // 
             // RegistroVenta
             // 
@@ -279,9 +269,9 @@
             this.Name = "RegistroVenta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tienda | Registro Venta";
+            this.Load += new System.EventHandler(this.RegistroVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.productobindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVenta)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ventabindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detallesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -302,14 +292,13 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.BindingSource productobindingSource;
-        private System.Windows.Forms.BindingSource ventabindingSource;
         private System.Windows.Forms.ComboBox btnNombre;
         private System.Windows.Forms.TextBox btnCantidad;
         private System.Windows.Forms.TextBox btnCodigo;
         private System.Windows.Forms.BindingSource detallesBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn Código;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioUnitario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
     }

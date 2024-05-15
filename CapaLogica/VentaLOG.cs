@@ -12,6 +12,11 @@ namespace CapaLogica
     {
         VentaDAL _ventaDAL;
 
+       public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
+
         public int GuardarVenta(Ventas ventas)
         {
             _ventaDAL = new VentaDAL();
