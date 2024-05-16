@@ -52,7 +52,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(63, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(204, 26);
+            this.label1.Size = new System.Drawing.Size(131, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre Producto:";
             // 
@@ -61,7 +61,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(101, 69);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 26);
+            this.label2.Size = new System.Drawing.Size(93, 19);
             this.label2.TabIndex = 1;
             this.label2.Text = "Descripcion:";
             // 
@@ -70,7 +70,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(68, 269);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 26);
+            this.label3.Size = new System.Drawing.Size(0, 19);
             this.label3.TabIndex = 2;
             // 
             // label4
@@ -78,7 +78,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(104, 291);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(135, 26);
+            this.label4.Size = new System.Drawing.Size(90, 19);
             this.label4.TabIndex = 3;
             this.label4.Text = "Existencias:";
             // 
@@ -87,7 +87,7 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(60, 231);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(212, 26);
+            this.label5.Size = new System.Drawing.Size(134, 19);
             this.label5.TabIndex = 4;
             this.label5.Text = "Precio Por Unidad:";
             // 
@@ -96,7 +96,7 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(134, 353);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(90, 26);
+            this.label7.Size = new System.Drawing.Size(60, 19);
             this.label7.TabIndex = 6;
             this.label7.Text = "Estado:";
             // 
@@ -105,7 +105,7 @@
             this.btnPrecioUnitario.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceProducto, "PrecioUnitario", true));
             this.btnPrecioUnitario.Location = new System.Drawing.Point(213, 231);
             this.btnPrecioUnitario.Name = "btnPrecioUnitario";
-            this.btnPrecioUnitario.Size = new System.Drawing.Size(131, 35);
+            this.btnPrecioUnitario.Size = new System.Drawing.Size(131, 26);
             this.btnPrecioUnitario.TabIndex = 8;
             // 
             // bindingSourceProducto
@@ -126,7 +126,7 @@
             this.btnNombreProducto.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceProducto, "Nombre", true));
             this.btnNombreProducto.Location = new System.Drawing.Point(213, 22);
             this.btnNombreProducto.Name = "btnNombreProducto";
-            this.btnNombreProducto.Size = new System.Drawing.Size(412, 35);
+            this.btnNombreProducto.Size = new System.Drawing.Size(412, 26);
             this.btnNombreProducto.TabIndex = 10;
             // 
             // btnExistencias
@@ -134,7 +134,7 @@
             this.btnExistencias.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceProducto, "Stock", true));
             this.btnExistencias.Location = new System.Drawing.Point(213, 291);
             this.btnExistencias.Name = "btnExistencias";
-            this.btnExistencias.Size = new System.Drawing.Size(131, 35);
+            this.btnExistencias.Size = new System.Drawing.Size(131, 26);
             this.btnExistencias.TabIndex = 12;
             // 
             // chkEstado
@@ -143,7 +143,7 @@
             this.chkEstado.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.bindingSourceProducto, "Estado", true));
             this.chkEstado.Location = new System.Drawing.Point(213, 349);
             this.chkEstado.Name = "chkEstado";
-            this.chkEstado.Size = new System.Drawing.Size(104, 30);
+            this.chkEstado.Size = new System.Drawing.Size(71, 23);
             this.chkEstado.TabIndex = 13;
             this.chkEstado.Text = "Activo";
             this.chkEstado.UseVisualStyleBackColor = true;
@@ -169,8 +169,9 @@
             // 
             // RegistroProductos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 26F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(756, 473);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);

@@ -157,8 +157,8 @@
             // 
             // btnNuevoProducto
             // 
-            this.btnNuevoProducto.BackColor = System.Drawing.Color.Green;
-            this.btnNuevoProducto.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnNuevoProducto.BackColor = System.Drawing.Color.Lavender;
+            this.btnNuevoProducto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnNuevoProducto.Location = new System.Drawing.Point(70, 392);
             this.btnNuevoProducto.Name = "btnNuevoProducto";
             this.btnNuevoProducto.Size = new System.Drawing.Size(108, 31);
@@ -169,8 +169,8 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCancelar.BackColor = System.Drawing.Color.Lavender;
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnCancelar.Location = new System.Drawing.Point(499, 392);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(108, 31);
@@ -220,6 +220,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(826, 432);
             this.Controls.Add(this.gbxEstado);
             this.Controls.Add(this.btnCancelar);
