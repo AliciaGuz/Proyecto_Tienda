@@ -11,13 +11,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace CapaVista
 {
     public partial class RegistroVenta : Form
     {
         VentaLOG _ventaLOG;
         ProductoLOG _productoLOG;
-        DataTable detalleVenta; 
+        DataTable detalleVenta;
 
         public RegistroVenta()
         {
@@ -25,7 +26,7 @@ namespace CapaVista
             CargarProductos();
 
             detalleVenta = new DataTable();
-            detalleVenta.Columns.Add("Codigo", typeof(int));
+            detalleVenta.Columns.Add("ProductoId", typeof(int));
             detalleVenta.Columns.Add("Nombre", typeof(string));
             detalleVenta.Columns.Add("Precio", typeof(decimal));
             detalleVenta.Columns.Add("Cantidad", typeof(int));
@@ -42,7 +43,7 @@ namespace CapaVista
         {
             if (!string.IsNullOrEmpty(btnCodigo.Text))
             {
-                _productoLOG= new ProductoLOG();
+                _productoLOG = new ProductoLOG();
                 int codigo = int.Parse(btnCodigo.Text);
                 var producto = _productoLOG.ObtenerProductoPorId(codigo);
 
@@ -71,15 +72,15 @@ namespace CapaVista
             {
                 _productoLOG = new ProductoLOG();
 
-                int codigo = int.Parse(btnCodigo.Text);
-                int cantidad = int.Parse(btnCantidad.Text);
+                int ProductoId = int.Parse(btnCodigo.Text);
+                int Cantidad = int.Parse(btnCantidad.Text);
 
                 var producto = (Producto)productobindingSource.Current;
 
                 if (producto != null)
                 {
-                    detalleVenta.Rows.Add(codigo, producto.Nombre, producto.PrecioUnitario,
-                        cantidad, (cantidad * producto.PrecioUnitario));
+                    detalleVenta.Rows.Add(ProductoId, producto.Nombre, producto.PrecioUnitario,
+                        Cantidad, (Cantidad * producto.PrecioUnitario));
 
                     dgvDetalleVenta.DataSource = detalleVenta;
 
@@ -88,7 +89,7 @@ namespace CapaVista
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocurrio un Error", "UNAB|Chalatenango",
+                MessageBox.Show("Ocurrio un Error", "Tienda | Registro Venta",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -117,66 +118,54 @@ namespace CapaVista
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+
+            try
             {
+                _ventaLOG = new VentaLOG();
 
-                try
+                Ventas ventas = new Ventas();
+
+                ventas.Fecha = DateTime.Now;
+                ventas.Total = decimal.Parse(btnTotal.Text);
+
+                foreach (DataGridViewRow row in dgvDetalleVenta.Rows)
                 {
-                    VentaLOG _ventaLOG = new VentaLOG();
-
-                    Ventas ventas = new Ventas();
-                    ventas.Fecha = DateTime.Now;
-                    ventas.Total = decimal.Parse(btnTotal.Text);
-
-                    foreach (DataGridViewRow row in dgvDetalleVenta.Rows)
+                    var detalle = new DetalleVenta()
                     {
-                        int codigo;
-                        decimal precio;
-                        int cantidad;
+                        ProductoId = int.Parse(row.Cells["ProductoId"].Value.ToString()),
+                        Precio = decimal.Parse(row.Cells["Precio"].Value.ToString()),
+                        Cantidad = int.Parse(row.Cells["Cantidad"].Value.ToString())
+                    };
 
-                        // Verificar si los valores de las celdas son válidos antes de convertirlos
-                        if (int.TryParse(row.Cells["Codigo"].Value?.ToString(), out codigo) &&
-                            decimal.TryParse(row.Cells["Precio"].Value?.ToString(), out precio) &&
-                            int.TryParse(row.Cells["Cantidad"].Value?.ToString(), out cantidad))
-                        {
-                            var detalle = new DetalleVenta()
-                            {
-                                ProductoId = codigo,
-                                Precio = precio,
-                                Cantidad = cantidad
-                            };
-
-                            ventas.Detalles.Add(detalle);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Los datos en la fila " + row.Index + " no son válidos.", "Error de Conversión",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-
-                    int resultado = _ventaLOG.GuardarVenta(ventas);
-
-                    if (resultado > 0)
-                    {
-                        MessageBox.Show("Venta Guardada con Éxito");
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se logró guardar la venta");
-                    }
+                    ventas.Detalles.Add(detalle);
                 }
-                catch (Exception)
+
+                int resultado = _ventaLOG.GuardarVenta(ventas);
+
+                if (resultado > 0)
                 {
-                    MessageBox.Show("Ocurrio un Error", "UNAB|Chalatenango",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Venta Guardada con Exito");
                 }
+                else
+                {
+                
+                    MessageBox.Show("No se logro guardar la venta");
+                }
+
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un Error: " + ex.Message, "Tienda ",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void RegistroVenta_Load(object sender, EventArgs e)
         {
 
         }
+
 
         private void dgvDetalleVenta_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
@@ -206,9 +195,12 @@ namespace CapaVista
             }
         }
 
-
-
-       
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
+
+
 

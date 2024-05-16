@@ -17,43 +17,34 @@ namespace CapaVista
     public partial class RegistroProductos : Form
     {
         ProductoLOG _productoLOG;
-        public RegistroProductos()
+        int _id;
+
+        public RegistroProductos(int id = 0)
         {
             InitializeComponent();
 
-            bindingSourceProducto.MoveLast();
-            bindingSourceProducto.AddNew();
+            _id = id;
+
+            if (_id > 0)
+            {
+                this.Text = "Tienda | Edición de Productos";
+                btnGuardar.Text = "Actualizar";
+
+                CargarDatos(_id);
+            }
+            else
+            {
+                bindingSourceProducto.MoveLast();
+                bindingSourceProducto.AddNew();
+            }
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void CargarDatos(int id)
         {
+            _productoLOG = new ProductoLOG();
 
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            GuardarProducto();
-        }
-
-        private void chkEstado_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCancelar_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
+            bindingSourceProducto.DataSource = _productoLOG.ObtenerProductoPorId(id);
         }
 
         private void GuardarProducto()
@@ -88,7 +79,7 @@ namespace CapaVista
                     return;
                 }
 
-                if(!chkEstado.Checked)
+                if (!chkEstado.Checked)
                 {
                     var dialogo = MessageBox.Show("¿Está seguro que desea guardar el producto inactivo?", "Tienda | Registro Productos",
                                     MessageBoxButtons.YesNo, MessageBoxIcon.Information);
@@ -101,39 +92,69 @@ namespace CapaVista
 
                 }
 
-                Producto producto;
-                producto = (Producto)bindingSourceProducto.Current;
+                int resultado;
 
-                int resultado = _productoLOG.GuardarProducto(producto);
-
-                if (resultado > 0)
+                if (_id >= 0)
                 {
-                    MessageBox.Show("Usuario agregado exitosamente!", "Tienda | Registro Productos",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
+                    Producto producto;
+
+                    producto = (Producto)bindingSourceProducto.Current;
+
+                    resultado = _productoLOG.ActualizarProducto(producto, _id);
+
+                    if (resultado > 0)
+                    {
+                        MessageBox.Show("Usuario actualizado exitosamente!", "Tienda | Registro Productos",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se logro actualizar el usuario", "Tienda | Registro Productos",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
+
                 else
                 {
-                    MessageBox.Show("No se logro guardar el usuario", "Tienda | Registro Productos",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    bindingSourceProducto.EndEdit();
+
+                    Producto producto;
+                    producto = (Producto)bindingSourceProducto.Current;
+
+                    resultado = _productoLOG.GuardarProducto(producto);
+
+                    if (resultado > 0)
+                    {
+                        MessageBox.Show("Usuario agregado exitosamente!", "Tienda | Registro Productos",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se logro guardar el usuario", "Tienda | Registro Productos",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
 
+
             }
-            catch (Exception) 
+            catch (Exception ex)
             {
-                MessageBox.Show("Ocurrio un Error", "Tienda | Registro Productos",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ocurrió un Error: " + ex.Message, "UNAB|Chalatenango",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void btnNombreProducto_TextChanged(object sender, EventArgs e)
-        {
 
         }
 
-        private void RegistroProductos_Load(object sender, EventArgs e)
-        {
 
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            GuardarProducto();
         }
     }
 }
+
+
+

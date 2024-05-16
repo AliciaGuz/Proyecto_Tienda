@@ -55,7 +55,6 @@
             this.label1.Size = new System.Drawing.Size(204, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre Producto:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -73,7 +72,6 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 26);
             this.label3.TabIndex = 2;
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -83,7 +81,6 @@
             this.label4.Size = new System.Drawing.Size(135, 26);
             this.label4.TabIndex = 3;
             this.label4.Text = "Existencias:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -131,7 +128,6 @@
             this.btnNombreProducto.Name = "btnNombreProducto";
             this.btnNombreProducto.Size = new System.Drawing.Size(412, 35);
             this.btnNombreProducto.TabIndex = 10;
-            this.btnNombreProducto.TextChanged += new System.EventHandler(this.btnNombreProducto_TextChanged);
             // 
             // btnExistencias
             // 
@@ -151,7 +147,6 @@
             this.chkEstado.TabIndex = 13;
             this.chkEstado.Text = "Activo";
             this.chkEstado.UseVisualStyleBackColor = true;
-            this.chkEstado.CheckedChanged += new System.EventHandler(this.chkEstado_CheckedChanged);
             // 
             // btnGuardar
             // 
@@ -171,7 +166,6 @@
             this.btnCancelar.TabIndex = 16;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
             // 
             // RegistroProductos
             // 
@@ -197,7 +191,6 @@
             this.Name = "RegistroProductos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tienda | Registro de Productos";
-            this.Load += new System.EventHandler(this.RegistroProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceProducto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

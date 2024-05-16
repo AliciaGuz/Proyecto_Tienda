@@ -135,10 +135,55 @@
   <metadata name="Estado.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="Editar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Editar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        /9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYa
+        HSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgo
+        KCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAUABQDASIAAhEBAxEB/8QA
+        HwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIh
+        MUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVW
+        V1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXG
+        x8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQF
+        BgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAV
+        YnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOE
+        hYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq
+        8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD0fwPq/wATPF/hey1211DwxbQXm9kiktZSyhXZecN/s1X+KHxL
+        1XwL4Wi0q8ubC98a3gYIbKJljgjJwHKsSd3YDufYc9B8BHkj+CehPBH5kywzlEzjc3nSYFcX4D+GGsad
+        qGr+OfH8kV14gSOS5toSwlWKQKSHbHGRgBVHAx9MAyf4a/CTW08MJca94o1/TdQvJWupba0uioQtj7+c
+        5c4yfrjtRXqnw41a613wHoWqaiyveXVoksrKu0FiOTgdKKBHx1ofxX8Y+FtNj0XRdVWHT7RnWKNraJyo
+        LEnkrk8k1ZvPjf49vLOe2n1mMxTI0bgWkIJUjB520UUFH1j8IUEfwv8AC6rnH9nwnn3UGiiigk//2Q==
+</value>
+  </data>
+  <metadata name="Eliminar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Eliminar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAYAAADdRIy+AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wQAADsEBuJFr7QAAA11JREFUOE+dlGtQFFQUx3eyFO3lMx8lM5mkYpDTY0IjhRW1ib5FM/kYHVHGVzMZ
+        aNM7qk8lktSM4OdCy0Vg2VVkWWBhMRZ2WT4kOCuMaAiuhI21sMBW8+vc27LLLPWlnTmzd+8993f/5/zv
+        XsMfoRAjIyOMjo4y2NtL5YcfUZWbR8XhtzHLd1XeESplbD36Dua8PCxHjv4zljXz+x/Q3dKi946PjREI
+        BDCMDA8zJj/u9PdzfGUi7txcXDt3Up+WTv3yBBpXJeJMTubHZ57FlZKCOzWV9vQ0OjZn0J5hpCQhAZ+z
+        maCIGh8fx6Doo8EgjlOncO7fz4Ulj3Jx0WJql8ZT9/gyHE+uoGn1UzSvWUPLc8/TunYtng3r8W40aqh3
+        00ZMh97UKhXHoKQGZWAr/IrGzFexzp6DPflpLud/ypDHw53WNlxbXsaZlIT7lUxcL6TQlvoinrQNdAhM
+        QSv27WNMgKp1hmGpW0GrvzyGdeUqLA8+xPm587i4cBG2x5Zy86yJQE8PHbt3c/Wzz+mWUCrd61+i3Ziu
+        gVUHDmpYSPyImGI/UYRF1FXNnIX14dlcmL+AmsVL8BUUoD4du3bRlJTMkNPJzdJS3EajVqmg57L3TDWl
+        +lgB5fdNp3JGHJb7H8A6Zy41TyzHnrgaryholP41S7nebdsJ3b1LW2Ym9vh4zHFxnN2+I2qKql0103a8
+        UAPLp8+QpJmcF3V/qrXbgwT7+vhLKglcv86t6mp8hYU4N2+h4p5pOn6QQ5QpyguDUjdhykRCxbR7dfgd
+        jXTm53P540/4/coVLmVl0VNSgln63HvmTBS4dZs2RanUpuiSxZQIMBwDNhvu7GwN/K2zU4Cv89O7703J
+        M4VLjjHlxJTEG6WnufRalgb6GxrwHjyES9TE5n3/xtaoKcOTTIlN7JIr4n3rML6iIgZqaug5WUzDunV6
+        7TtpiVXurSMnh3ppl1YYa0ossCkjA39dHbfDcctWi2XefL6Vtfqvv2HI76e11k6/mBU1JQxsKC7hdAzw
+        v+LkIwv5dXCQNjnkRne33h8BTpT8y899fCH/DtO/AGKjWB4Nj8PBta4uvVcBIyVHni+ZHPD5KJPn6tze
+        HExy+8v27KUsPJ48Vy5P2DW5RpP3Rk0JX5vIKZL0/+dC/A0YwrtFHp2niQAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="productoBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>67, 16</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAgIAAAAEAIAAoCAEAFgAAACgAAACAAAAAAAEAAAEAIAAAAAAAAAgBAAAAAAAAAAAAAAAAAAAA

@@ -45,7 +45,7 @@
             this.btnCantidad = new System.Windows.Forms.TextBox();
             this.btnCodigo = new System.Windows.Forms.TextBox();
             this.detallesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -94,10 +94,6 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Existencias";
             // 
-            // productobindingSource
-            // 
-            this.productobindingSource.DataSource = typeof(CapaEntidades.Producto);
-            // 
             // btnStock
             // 
             this.btnStock.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.productobindingSource, "Stock", true));
@@ -122,7 +118,7 @@
             this.dgvDetalleVenta.AllowUserToAddRows = false;
             this.dgvDetalleVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalleVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Código,
+            this.ProductoId,
             this.Nombre,
             this.Precio,
             this.Cantidad,
@@ -199,15 +195,15 @@
             this.btnCodigo.TabIndex = 15;
             this.btnCodigo.TextChanged += new System.EventHandler(this.btnCodigo_TextChanged);
             // 
-            // Código
+            // ProductoId
             // 
-            this.Código.DataPropertyName = "Codigo";
-            this.Código.Frozen = true;
-            this.Código.HeaderText = "Código";
-            this.Código.MinimumWidth = 6;
-            this.Código.Name = "Código";
-            this.Código.ReadOnly = true;
-            this.Código.Width = 75;
+            this.ProductoId.DataPropertyName = "ProductoId";
+            this.ProductoId.Frozen = true;
+            this.ProductoId.HeaderText = "Código";
+            this.ProductoId.MinimumWidth = 6;
+            this.ProductoId.Name = "ProductoId";
+            this.ProductoId.ReadOnly = true;
+            this.ProductoId.Width = 75;
             // 
             // Nombre
             // 
@@ -296,7 +292,7 @@
         private System.Windows.Forms.TextBox btnCantidad;
         private System.Windows.Forms.TextBox btnCodigo;
         private System.Windows.Forms.BindingSource detallesBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Código;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductoId;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;

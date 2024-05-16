@@ -23,25 +23,13 @@ namespace CapaVista
         objMttProducto.ShowDialog();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void productoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void MenuRegistroVentas_Click(object sender, EventArgs e)
         {
             RegistroVenta objRegistroVenta = new RegistroVenta();
             objRegistroVenta.ShowDialog();
         }
+
+       
     }
 }
